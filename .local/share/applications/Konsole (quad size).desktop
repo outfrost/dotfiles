@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=System;TerminalEmulator;
+Comment=Command line access
+Exec=konsole --profile "Outfrost quad"
+GenericName=Terminal (quad size)
+Icon=terminal
+Name=Konsole (quad size)
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,4 @@
+partial modifier_keys
+xkb_symbols "rctrl_as_menu" {
+	replace key <RCTL> { [ Menu ] };
+};

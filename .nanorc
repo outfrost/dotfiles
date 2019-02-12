@@ -1,0 +1,24 @@
+set autoindent
+set constantshow
+set multibuffer
+set positionlog
+set smarthome
+set smooth
+set softwrap
+set tabsize 4
+set keycolor ,black
+set statuscolor brightblack
+set titlecolor ,black
+
+bind ^Z undo all
+bind ^Y redo all
+bind ^J copytext all
+bind ^S suspend main
+bind M-L gotoline main
+bind F3 searchagain main
+bind M-Q findprevious main
+bind M-W findnext main
+bind M-; prevword main
+bind M-: prevword main
+bind M-' nextword main
+bind M-" nextword main

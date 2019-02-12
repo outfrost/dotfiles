@@ -1,0 +1,116 @@
+"*":
+  "atom-html-preview":
+    enableMathJax: true
+    scrollToCursor: true
+  "atom-latex":
+    combine_typesetting_log: false
+    preview_after_build: "Do nothing"
+  "atom-terminal":
+    app: "/usr/bin/konsole"
+    args: "--workdir"
+    surpressDirectoryArgument: false
+  "autocomplete-plus":
+    fileBlacklist: [
+      ".*"
+      "*.md"
+      "*.txt"
+    ]
+  core:
+    audioBeep: false
+    automaticallyUpdate: false
+    disabledPackages: [
+      "markdown-preview"
+      "spell-check"
+      "branch-status"
+      "language-gfm"
+    ]
+    packagesWithKeymapsDisabled: [
+      "split-diff"
+      "html-tab"
+      "latex"
+      "github"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "loved-syntax"
+    ]
+  editor:
+    scrollPastEnd: true
+    showInvisibles: true
+    softTabs: false
+    tabLength: 4
+    tabType: "hard"
+  "exception-reporting":
+    userId: "6a33e375-96b9-4755-9a11-184935ca1cb0"
+  "git-plus":
+    experimental:
+      stageFilesBeta: false
+    general: {}
+  github:
+    viewChangesForCurrentFileDiffPaneSplitDirection: "right"
+  "hey-pane":
+    expandedWidth: 74
+    focusDelay: 100
+  "language-markdown":
+    autoIncrementListItems: false
+    removeEmptyListItems: false
+  latex:
+    cleanPatterns: [
+      "**/*.aux"
+      "**/*.aux.bak"
+      "**/*.bbl"
+      "**/*.bcf"
+      "**/*.blg"
+      "**/*.fdb_latexmk"
+      "**/*.fls"
+      "**/*.idx"
+      "**/*.idx.bak"
+      "**/*.ilg"
+      "**/*.ind"
+      "**/*.lof"
+      "**/*.log"
+      "**/*.lol"
+      "**/*.lot"
+      "**/*.nav"
+      "**/*.snm"
+      "**/*.synctex.gz"
+      "**/*.toc"
+      "/**/_minted-{jobname}"
+      "/{output_dir}/sage-plots-for-{jobname}.tex"
+      "/missfont.log"
+      "/texput.log"
+      "/texput.aux"
+      "**/*.run.xml"
+    ]
+    enableShellEscape: true
+    openResultAfterBuild: false
+    openResultInBackground: false
+    opener: "pdf-view"
+  "markdown-preview-plus":
+    markdownItConfig:
+      useLazyHeaders: false
+    saveConfig: {}
+    syncConfig: {}
+  "markdown-themeable-pdf":
+    customFooterPath: "Wirtualizacja systemów i sieci komputerowych/footer.js"
+    enableCustomFooter: false
+    enableCustomHeader: false
+    enableTypographer: false
+    enableXHTML: true
+    openPdfInAtomWorkspace: false
+  "pdf-view":
+    reverseSyncBehaviour: "Disabled"
+  "split-diff":
+    colors:
+      addedColorSide: "right"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnlyLines: true
+".md.text":
+  editor:
+    autoIndentOnPaste: false
+".plain.text":
+  editor:
+    softWrap: true
