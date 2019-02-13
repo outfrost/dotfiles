@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=xrandr --output LVDS1 --gamma 0.85:0.85:0.7
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_GB]=Gamma correction for built-in screen
+Comment[en_GB]=Set gamma on LVDS1 output to 0.85/0.85/0.7
+X-GNOME-Autostart-Delay=0

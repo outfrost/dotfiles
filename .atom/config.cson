@@ -1,0 +1,69 @@
+"*":
+  "atom-terminal":
+    app: "/usr/bin/gnome-terminal"
+  "autocomplete-plus":
+    fileBlacklist: [
+      ".*"
+      "*.md"
+      "*.txt"
+    ]
+  core:
+    disabledPackages: [
+      "spell-check"
+    ]
+    packagesWithKeymapsDisabled: [
+      "latex"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    fontSize: 13
+    scrollPastEnd: true
+    showInvisibles: true
+    softTabs: false
+    tabLength: 4
+  "exception-reporting":
+    userId: "f4579703-ec0f-424b-9c6d-c09a414a6f03"
+  latex:
+    cleanPatterns: [
+      "**/*.aux"
+      "**/*.aux.bak"
+      "**/*.bbl"
+      "**/*.bcf"
+      "**/*.blg"
+      "**/*.dvi"
+      "**/*.fdb_latexmk"
+      "**/*.fls"
+      "**/*.idx"
+      "**/*.idx.bak"
+      "**/*.ilg"
+      "**/*.ind"
+      "**/*.lof"
+      "**/*.log"
+      "**/*.lol"
+      "**/*.lot"
+      "**/*.nav"
+      "**/*.out"
+      "**/*.ps"
+      "**/*.snm"
+      "**/*.synctex.gz"
+      "**/*.toc"
+      "/**/_minted-{jobname}"
+      "/{output_dir}/sage-plots-for-{jobname}.tex"
+      "/missfont.log"
+      "/texput.log"
+      "/texput.aux"
+    ]
+    openResultAfterBuild: false
+    opener: "x-reader"
+  "markdown-themeable-pdf":
+    enableCustomFooter: false
+    enableCustomHeader: false
+    enableLinkify: true
+    enableTypographer: false
+    enableXHTML: true
+    imageQuality: 100
+    openPdfInAtomWorkspace: false
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnlyLines: true
