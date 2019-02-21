@@ -1,0 +1,19 @@
+[General]
+default-save-location[$e]=$HOME/Screenshots
+last-saved-to[$e]=$HOME/Screenshots
+save-filename-format=Screenshot from %Y-%M-%D %H-%m-%S
+
+[GuiConfig]
+captureDelay=2
+captureModeIndex=4
+cropRegion=456,126,652,641
+dynamicSaveButton=false
+includeDecorations=true
+includePointer=false
+lastUsedSaveMode=0
+rememberLastRectangularRegion=false
+useLightMaskColour=false
+window-position=127,373
+
+[Open-with settings]
+CompletionMode=5

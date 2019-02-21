@@ -1,0 +1,8 @@
+[Don't put fucking everything on secondary display]
+Description=Don't put fucking everything on secondary display
+screen=0
+screenrule=3
+types=1
+wmclass=
+wmclasscomplete=false
+wmclassmatch=0
