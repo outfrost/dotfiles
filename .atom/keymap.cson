@@ -31,6 +31,9 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#configuring-with-cson
 
+'atom-workspace, atom-workspace atom-text-editor':
+  'ctrl-shift-e': 'markdown-themeable-pdf:export'
+
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-shift-D': 'latex:build'
 

@@ -1,6 +1,11 @@
 "*":
+  "atom-latex":
+    combine_typesetting_log: false
+    preview_after_build: "Do nothing"
   "atom-terminal":
-    app: "/usr/bin/gnome-terminal"
+    app: "/usr/bin/konsole"
+    args: "--workdir"
+    surpressDirectoryArgument: false
   "autocomplete-plus":
     fileBlacklist: [
       ".*"
@@ -8,11 +13,17 @@
       "*.txt"
     ]
   core:
+    audioBeep: false
+    automaticallyUpdate: false
     disabledPackages: [
       "spell-check"
+      "branch-status"
     ]
     packagesWithKeymapsDisabled: [
+      "split-diff"
+      "html-tab"
       "latex"
+      "github"
     ]
     telemetryConsent: "limited"
   editor:
@@ -21,6 +32,7 @@
     showInvisibles: true
     softTabs: false
     tabLength: 4
+    tabType: "hard"
   "exception-reporting":
     userId: "f4579703-ec0f-424b-9c6d-c09a414a6f03"
   latex:
@@ -52,9 +64,12 @@
       "/missfont.log"
       "/texput.log"
       "/texput.aux"
+      "**/*.run.xml"
     ]
+    enableShellEscape: true
     openResultAfterBuild: false
-    opener: "x-reader"
+    openResultInBackground: false
+    opener: "okular"
   "markdown-themeable-pdf":
     enableCustomFooter: false
     enableCustomHeader: false
@@ -67,3 +82,9 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnlyLines: true
+".md.text":
+  editor:
+    autoIndentOnPaste: false
+".plain.text":
+  editor:
+    softWrap: true
