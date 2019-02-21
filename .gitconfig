@@ -1,0 +1,13 @@
+[user]
+	name = outfrost
+	email = kotlet.bahn@gmail.com
+[push]
+	default = simple
+[alias]
+	qg = log --all --color --graph --full-history --date-order --oneline
+	graph = log --all --color --graph --abbrev-commit --full-history --date-order --pretty=format:\"%C(bold blue)%h%Creset %<|(64,trunc)%s%>>|(48)%n  %C(black)%cD - %an%C(auto)%d%Creset\"
+	qga = log --all --color --graph --abbrev-commit --full-history --date-order --pretty=format:\"%Cblue%h%Creset%C(auto)%d%Creset %s %C(bold black)(%cr)%Creset\"
+[credential "https://"]
+	helper = cache --timeout=1800
+[core]
+	autocrlf = input

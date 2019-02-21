@@ -1,0 +1,32 @@
+
+# This configuration file lets you define new commands
+# or change the shortcut of built-in verbs.
+#
+# 'invocation' can be a letter or a word
+# 'execution' is either a command, where {file} will be replaced by the selected line,
+# 	or one of the built-in commands.
+#
+# The configuration documentation and complete list of built-in verbs
+# can be found in https://github.com/Canop/broot/blob/master/documentation.md
+
+
+###############################
+# shortcuts for built-in verbs:
+
+[[verbs]]
+invocation = "p"
+execution = ":parent"
+
+#####################
+# user defined verbs:
+
+[[verbs]]
+name = "edit"
+invocation = "ed"
+execution = "nano {file}"
+
+[[verbs]]
+name = "view"
+invocation = "view"
+execution = "bat {file}"
+
