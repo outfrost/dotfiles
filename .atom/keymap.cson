@@ -18,7 +18,7 @@
 #   'ctrl-p': 'core:move-down'
 #
 # You can find more information about keymaps in these guides:
-# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#customizing-keybindings
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
 # * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
 #
 # If you're having trouble with your keybindings not working, try the
@@ -29,13 +29,10 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
-# http://flight-manual.atom.io/using-atom/sections/basic-customization/#configuring-with-cson
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
 'atom-workspace, atom-workspace atom-text-editor':
-  'ctrl-shift-e': 'markdown-themeable-pdf:export'
-
-'atom-workspace atom-text-editor:not([mini])':
-  'ctrl-shift-D': 'latex:build'
-
-'atom-text-editor[data-grammar~="latex"]':
-  'ctrl-shift-d': 'latex:build'
+	'ctrl-shift-e': 'markdown-themeable-pdf:export'
+	'ctrl-shift-d': 'latex:build'
+	'alt-s': 'latex:sync'
+	'ctrl-shift-m': 'graphviz-preview-plus:toggle'
