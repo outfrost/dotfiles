@@ -3,7 +3,9 @@ set autoindent
 set linenumbers
 set constantshow
 set multibuffer
+set noconvert
 set positionlog
+set historylog
 set smarthome
 set smooth
 set nowrap
@@ -11,12 +13,18 @@ set softwrap
 set atblanks
 set tabsize 4
 set morespace
+set nohelp
 set keycolor ,black
 set statuscolor brightblack
 set titlecolor ,black
 set numbercolor blue
 
+# !!
+set tabstospaces
+
 include "/usr/share/nano/*.nanorc"
+include "~/.nano/gfm.nanorc"
+include "~/.nano/rust.nanorc"
 
 bind ^Z undo all
 bind ^Y redo all
@@ -27,6 +35,6 @@ bind F3 findnext main
 bind M-Q findprevious main
 bind M-W findnext main
 bind M-; prevword main
-bind M-: cutwordleft main
+bind M-: chopwordleft main
 bind M-' nextword main
-bind M-" cutwordright main
+bind M-" chopwordright main
