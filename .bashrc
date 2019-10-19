@@ -138,12 +138,6 @@ ex ()
   fi
 }
 
-# better yaourt colors
-export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-
-# Editor
-export EDITOR="/usr/bin/nano"
-
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
@@ -151,7 +145,7 @@ fi
 
 alias ll='ls -alN'
 alias la='ls -A'
-alias l='ls -CFN'
+alias l='ls -aCFN'
 
 # Shorthand clone from AUR
 aur () {
@@ -159,7 +153,7 @@ aur () {
 }
 
 # broot
-source /home/outfrost/.config/broot/launcher/bash/br
+#source /home/outfrost/.config/broot/launcher/bash/br
 
 # thefuck
 eval $(thefuck --alias)
