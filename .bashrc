@@ -143,9 +143,9 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
-alias ll='ls -alN'
-alias la='ls -A'
-alias l='ls -aCFN'
+alias ll='lsd -al'
+alias la='lsd -A'
+alias l='lsd -aF'
 
 # Shorthand clone from AUR
 aur () {
