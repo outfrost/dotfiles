@@ -1,11 +1,14 @@
 [Background]
-Color=24,24,24
+Color=0,0,0
+MaxRandomHue=0
+MaxRandomSaturation=0
+MaxRandomValue=0
 
 [BackgroundFaint]
 Color=24,24,24
 
 [BackgroundIntense]
-Color=24,24,24
+Color=0,0,0
 
 [Color0]
 Color=48,48,48
@@ -14,61 +17,61 @@ Color=48,48,48
 Color=48,48,48
 
 [Color0Intense]
-Color=65,80,80
+Color=80,65,72
 
 [Color1]
-Color=224,69,55
+Color=192,11,44
 
 [Color1Faint]
-Color=224,69,55
+Color=160,39,59
 
 [Color1Intense]
-Color=224,121,111
+Color=255,31,106
 
 [Color2]
-Color=102,192,71
+Color=39,160,90
 
 [Color2Faint]
-Color=102,192,71
+Color=63,128,90
 
 [Color2Intense]
-Color=127,240,89
+Color=63,255,143
 
 [Color3]
-Color=192,192,71
+Color=255,135,15
 
 [Color3Faint]
-Color=192,192,71
+Color=192,132,71
 
 [Color3Intense]
-Color=224,224,55
+Color=255,148,127
 
 [Color4]
-Color=47,120,192
+Color=81,71,192
 
 [Color4Faint]
-Color=47,120,192
+Color=86,79,160
 
 [Color4Intense]
-Color=89,165,240
+Color=127,138,255
 
 [Color5]
-Color=168,95,192
+Color=192,71,192
 
 [Color5Faint]
-Color=168,95,192
+Color=160,79,160
 
 [Color5Intense]
-Color=210,119,240
+Color=234,127,255
 
 [Color6]
-Color=47,192,168
+Color=47,132,192
 
 [Color6Faint]
-Color=47,192,168
+Color=59,118,160
 
 [Color6Intense]
-Color=29,240,205
+Color=63,207,255
 
 [Color7]
 Color=224,224,224
@@ -90,6 +93,6 @@ Color=240,240,240
 
 [General]
 Blur=true
-Description=Outfrost
-Opacity=0.8
+Description=Ionised
+Opacity=0.88
 Wallpaper=
