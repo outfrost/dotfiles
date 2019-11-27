@@ -140,9 +140,7 @@ ex ()
 }
 
 # Alias definitions
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
+[ -r ~/.bash_aliases ] && . ~/.bash_aliases
 
 alias ll='lsd -al'
 alias la='lsd -A'
@@ -154,7 +152,7 @@ aur () {
 }
 
 # broot
-source /home/outfrost/.config/broot/launcher/bash/br
+[ -r "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
 # thefuck
 eval $(thefuck --alias)
