@@ -142,15 +142,6 @@ ex ()
 # Alias definitions
 [ -r ~/.bash_aliases ] && . ~/.bash_aliases
 
-alias ll='lsd -al'
-alias la='lsd -A'
-alias l='lsd -aF'
-
-# Shorthand clone from AUR
-aur () {
-	git clone https://aur.archlinux.org/$1.git
-}
-
 # broot
 [ -r "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
