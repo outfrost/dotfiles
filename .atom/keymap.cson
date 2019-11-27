@@ -35,3 +35,30 @@
 	'ctrl-shift-e': 'markdown-themeable-pdf:export'
 	'ctrl-shift-d': 'latex:build'
 	'alt-s': 'latex:sync'
+	'ctrl-shift-m': 'graphviz-preview-plus:toggle'
+
+'atom-workspace atom-text-editor':
+	'ctrl-up': 'editor:move-to-beginning-of-previous-paragraph'
+	'ctrl-down': 'editor:move-to-beginning-of-next-paragraph'
+	'ctrl-shift-up': 'editor:select-to-beginning-of-previous-paragraph'
+	'ctrl-shift-down': 'editor:select-to-beginning-of-next-paragraph'
+
+'atom-workspace atom-text-editor:not([mini])':
+	'alt-up': 'ctrl-dir-scroll:scroll-up'
+	'alt-down': 'ctrl-dir-scroll:scroll-down'
+	'alt-shift-up': 'ctrl-dir-scroll:scroll-up-big'
+	'alt-shift-down': 'ctrl-dir-scroll:scroll-down-big'
+
+'.platform-linux':
+	'ctrl-t': 'unset!'
+
+'body':
+	'ctrl-shift-W': 'pane:reopen-closed-item'
+	'ctrl-k down': 'pane:split-down-and-move-active-item'
+	'ctrl-k left': 'pane:split-left-and-move-active-item'
+	'ctrl-k right': 'pane:split-right-and-move-active-item'
+	'ctrl-k up': 'pane:split-up-and-move-active-item'
+	'ctrl-t down': 'window:focus-pane-below'
+	'ctrl-t left': 'window:focus-pane-on-left'
+	'ctrl-t right': 'window:focus-pane-on-right'
+	'ctrl-t up': 'window:focus-pane-above'

@@ -15,32 +15,42 @@
       "*.md"
       "*.txt"
     ]
+  "clang-format":
+    fallbackStyle: "none"
   core:
     audioBeep: false
     automaticallyUpdate: false
     disabledPackages: [
-      "markdown-preview"
       "spell-check"
       "branch-status"
-      "language-gfm"
+      "graphviz-preview"
     ]
+    openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "split-diff"
       "html-tab"
       "latex"
       "github"
+      "graphviz-preview"
+      "graphviz-preview-plus"
+      "ctrl-dir-scroll"
     ]
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "loved-syntax"
+      "neon-syntax"
     ]
+  "ctrl-dir-scroll":
+    bigScrollSize: 5
   editor:
+    autoIndentOnPaste: false
+    fontSize: 13
+    invisibles: {}
+    preferredLineLength: 100
     scrollPastEnd: true
     showInvisibles: true
     softTabs: false
     tabLength: 4
-    tabType: "hard"
   "exception-reporting":
     userId: "6a33e375-96b9-4755-9a11-184935ca1cb0"
   "git-plus":
@@ -93,12 +103,15 @@
     saveConfig: {}
     syncConfig: {}
   "markdown-themeable-pdf":
-    customFooterPath: "Wirtualizacja systemów i sieci komputerowych/footer.js"
     enableCustomFooter: false
     enableCustomHeader: false
+    enableLinkify: true
     enableTypographer: false
     enableXHTML: true
+    imageQuality: 100
     openPdfInAtomWorkspace: false
+  minimap:
+    minimapScrollIndicator: false
   "pdf-view":
     reverseSyncBehaviour: "Disabled"
   "split-diff":
@@ -106,8 +119,10 @@
       addedColorSide: "right"
   welcome:
     showOnStartup: false
-  whitespace:
-    ignoreWhitespaceOnlyLines: true
+  whitespace: {}
+".basic.html.text":
+  editor:
+    softWrap: true
 ".md.text":
   editor:
     autoIndentOnPaste: false
