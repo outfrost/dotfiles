@@ -15,6 +15,8 @@
       "*.md"
       "*.txt"
     ]
+  "clang-format":
+    fallbackStyle: "none"
   core:
     audioBeep: false
     automaticallyUpdate: false
@@ -23,6 +25,7 @@
       "branch-status"
       "graphviz-preview"
     ]
+    openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "split-diff"
       "html-tab"
@@ -30,13 +33,18 @@
       "github"
       "graphviz-preview"
       "graphviz-preview-plus"
+      "ctrl-dir-scroll"
     ]
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "loved-syntax"
+      "neon-syntax"
     ]
+  "ctrl-dir-scroll":
+    bigScrollSize: 5
   editor:
+    autoIndentOnPaste: false
+    fontSize: 13
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -102,6 +110,8 @@
     enableXHTML: true
     imageQuality: 100
     openPdfInAtomWorkspace: false
+  minimap:
+    minimapScrollIndicator: false
   "pdf-view":
     reverseSyncBehaviour: "Disabled"
   "split-diff":
@@ -109,8 +119,7 @@
       addedColorSide: "right"
   welcome:
     showOnStartup: false
-  whitespace:
-    ignoreWhitespaceOnlyLines: true
+  whitespace: {}
 ".basic.html.text":
   editor:
     softWrap: true

@@ -10,6 +10,6 @@
 	date = !echo No.
 	le-diff = !git diff --color | cat -E | less -R
 [credential "https://"]
-	helper = cache --timeout=900
+	helper = cache --timeout=1800
 [core]
 	autocrlf = input

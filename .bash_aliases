@@ -50,3 +50,8 @@ lk() {
 	  echo '.*+^ moe moe kyun~ ^+*.' ) | toilet -t -f ascii12 | lolcat
 	xtrlock
 }
+
+unset -f snapshot_unzip
+snapshot_unzip() {  # path
+	d="$(echo $1 | sed -E s/.zip$//)"; mkdir "$d" && unzip "$1" -d "$d";
+}

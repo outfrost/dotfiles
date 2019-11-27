@@ -20,7 +20,7 @@ set titlecolor ,black
 set numbercolor blue
 
 # !!
-set tabstospaces
+# set tabstospaces
 
 include "/usr/share/nano/*.nanorc"
 include "~/.nano/gfm.nanorc"
