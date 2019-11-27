@@ -10,14 +10,14 @@ dotfiles() {  # args...
 }
 
 unset -f wat
-wat() { # regex... path
+wat() {  # regex... path
 	grep --color=always -nRE "$@" | less -R
 }
 
 unset -f mkcd
-mkcd() { # path...
+mkcd() {  # path...
 	mkdir -p "$@"
-	cd "$#"
+	cd "${!#}"
 }
 
 unset -f cdb
