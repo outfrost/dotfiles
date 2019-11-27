@@ -108,10 +108,11 @@ shopt -s checkwinsize
 
 shopt -s expand_aliases
 
-# export QT_SELECT=4
-
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
+
+HISTSIZE=8000
+HISTFILESIZE=8000
 
 #
 # # ex - archive extractor
@@ -138,28 +139,11 @@ ex ()
   fi
 }
 
-# better yaourt colors
-export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-
-# Editor
-export EDITOR="/usr/bin/nano"
-
 # Alias definitions
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
-
-alias ll='ls -alN'
-alias la='ls -A'
-alias l='ls -CFN'
-
-# Shorthand clone from AUR
-aur () {
-	git clone https://aur.archlinux.org/$1.git
-}
+[ -r ~/.bash_aliases ] && . ~/.bash_aliases
 
 # broot
-source /home/outfrost/.config/broot/launcher/bash/br
+[ -r "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
 # thefuck
 eval $(thefuck --alias)

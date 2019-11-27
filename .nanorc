@@ -19,9 +19,6 @@ set statuscolor brightblack
 set titlecolor ,black
 set numbercolor blue
 
-# !!
-# set tabstospaces
-
 include "/usr/share/nano/*.nanorc"
 include "~/.nano/gfm.nanorc"
 include "~/.nano/rust.nanorc"
