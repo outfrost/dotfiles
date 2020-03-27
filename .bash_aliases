@@ -52,6 +52,11 @@ fzx() {
 	echo -n "$filename" | xclip
 }
 
+unset -f run
+run() {  # command args...
+	nohup "$@" >/dev/null 2>&1 &
+}
+
 unset -f lk
 lk() {
 	clear

@@ -10,6 +10,7 @@
     args: "--workdir"
     surpressDirectoryArgument: false
   "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
     fileBlacklist: [
       ".*"
       "*.md"
@@ -25,6 +26,7 @@
       "branch-status"
       "graphviz-preview"
     ]
+    fileSystemWatcher: "experimental"
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "split-diff"
@@ -59,6 +61,7 @@
     general: {}
   github:
     viewChangesForCurrentFileDiffPaneSplitDirection: "right"
+  "graphviz-preview-plus": {}
   "hey-pane":
     expandedWidth: 74
     focusDelay: 100
@@ -123,6 +126,9 @@
 ".basic.html.text":
   editor:
     softWrap: true
+".diff.source":
+  editor:
+    autoIndent: false
 ".md.text":
   editor:
     autoIndentOnPaste: false
