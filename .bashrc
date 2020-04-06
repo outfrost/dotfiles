@@ -108,10 +108,11 @@ shopt -s checkwinsize
 
 shopt -s expand_aliases
 
-# export QT_SELECT=4
-
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
+
+HISTSIZE=8000
+HISTFILESIZE=8000
 
 #
 # # ex - archive extractor
@@ -139,18 +140,7 @@ ex ()
 }
 
 # Alias definitions
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
-
-alias ll='lsd -al'
-alias la='lsd -A'
-alias l='lsd -aF'
-
-# Shorthand clone from AUR
-aur () {
-	git clone https://aur.archlinux.org/$1.git
-}
+[ -r ~/.bash_aliases ] && . ~/.bash_aliases
 
 # broot
 [ -r "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"

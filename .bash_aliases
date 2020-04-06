@@ -4,20 +4,30 @@ alias qk='konsole --profile "Outfrost quad" <&- >&- 2>&- & disown'
 alias lsb='lsblk -o NAME,RM,SIZE,MOUNTPOINT,FSTYPE,LABEL'
 alias umsshfs='fusermount3 -u'
 
+alias ll='lsd -al'
+alias la='lsd -A'
+alias l='lsd -aF'
+
 unset -f dotfiles
 dotfiles() {  # args...
 	/usr/bin/git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" "$@"
 }
 
+# Shorthand clone from AUR
+unset -f aur
+aur () {  # name
+	git clone "https://aur.archlinux.org/${1}.git"
+}
+
 unset -f wat
-wat() { # regex... path
+wat() {  # regex... path
 	grep --color=always -nRE "$@" | less -R
 }
 
 unset -f mkcd
-mkcd() { # path...
+mkcd() {  # path...
 	mkdir -p "$@"
-	cd "$#"
+	cd "${!#}"
 }
 
 unset -f cdb
@@ -40,6 +50,11 @@ fzx() {
 	filename="$(fzf)"
 	echo "$filename"
 	echo -n "$filename" | xclip
+}
+
+unset -f run
+run() {  # command args...
+	nohup "$@" >/dev/null 2>&1 &
 }
 
 unset -f lk
