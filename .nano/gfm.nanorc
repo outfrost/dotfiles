@@ -1,0 +1,38 @@
+# Syntax highlighting for GitHub Flavored Markdown files
+
+# See:  https://guides.github.com/features/mastering-markdown/
+# Original author:  Iwo 'outfrost' Bujkiewicz
+# License:  MIT
+
+syntax gfm "\.md$" "\.markdown$"
+
+comment "<!--|-->"
+
+# Unordered lists
+color red "^[[:space:]]*[*-+] "
+# Ordered lists
+color red "^[[:space:]]*[0-9]+\. "
+# Task lists
+color brightmagenta " \[ \] "
+color brightyellow " \[~\]"
+color magenta " \[x\] "
+# Headings
+color brightred "^[[:space:]]*\#{1,6} .*$"
+# Quotes
+color blue "^[[:space:]]*> .*$"
+# Italic text
+color magenta "\W\*[^[:space:]][^`]*[^[:space:]\]\*\W" "\W_[^[:space:]][^`]*[^[:space:]\]_\W"
+# Bold text
+color brightyellow "[^\]\*\*[^[:space:]].*[^[:space:]\]\*\*" "[^\]__[^[:space:]].*[^[:space:]\]__"
+# Hyperlinks
+color cyan "\[[^\[]*\]\([^\(]*\)"
+color cyan "https?:\/\/[^[:space:]]*"
+# Images
+color cyan "!\[[^\[]*\]\([^\(]*\)"
+# Comments
+color brightblack start="<!--" end="-->"
+# Inline code
+color brightgreen "`[^`]*`"
+# Blocks of code
+color green start="```" end="```"
+# color green "^[[:space:]]{4}[[:space:]]*.*$"

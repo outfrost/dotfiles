@@ -20,6 +20,7 @@ set titlecolor ,black
 set numbercolor blue
 
 include "/usr/share/nano/*.nanorc"
+include "~/.nano/*.nanorc"
 
 bind ^Z undo all
 bind ^Y redo all
