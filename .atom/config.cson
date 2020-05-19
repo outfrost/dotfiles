@@ -1,4 +1,7 @@
 "*":
+  "atom-browser":
+    autoPrefix: "https"
+    defaultLocation: "right"
   "atom-html-preview":
     enableMathJax: true
     scrollToCursor: true
@@ -36,6 +39,7 @@
       "graphviz-preview"
       "graphviz-preview-plus"
       "ctrl-dir-scroll"
+      "atom-browser"
     ]
     projectHome: "/home/outfrost/Code/etc"
     telemetryConsent: "limited"
