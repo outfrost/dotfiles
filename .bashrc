@@ -45,6 +45,11 @@ esac
 
 use_color=true
 
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
@@ -70,9 +75,9 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\]\h\[\033[01;36m\] \w \[\033[01;31m\][\j] \$\[\033[00m\] '
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\h\[\033[01;36m\] \w \[\033[01;31m\][\j] \$\[\033[00m\] '
 	else
-        PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;35m\][\j]\[\033[01;32m\] \$\[\033[00m\] '
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \[\033[01;35m\][\j]\[\033[01;32m\] \$\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -82,9 +87,9 @@ if ${use_color} ; then
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
-		PS1='\u@\h \W \$ '
+		PS1='${debian_chroot:+($debian_chroot)}\u@\h \W \$ '
 	else
-		PS1='\u@\h \w \$ '
+		PS1='${debian_chroot:+($debian_chroot)}\u@\h \w \$ '
 	fi
 fi
 
@@ -93,7 +98,6 @@ unset use_color safe_term match_lhs sh
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
 alias more=less
 
 xhost +local:root > /dev/null 2>&1

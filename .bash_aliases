@@ -1,22 +1,15 @@
 alias devmux="tmux new-session\; split-window -v -l 10\; select-pane -U\; split-window -h -b -l 20 \"watch -tc 'ls -A --group-directories-first --color=always | grep -v \\\"\\.swp\\\"'\"\; select-pane -R\; split-window -h"
 alias wmux="tmux new-session\; split-window -v -l 16\; select-pane -U\; split-window -h"
-alias qk='konsole --profile "Outfrost quad" <&- >&- 2>&- & disown'
 alias lsb='lsblk -o NAME,RM,SIZE,MOUNTPOINT,FSTYPE,LABEL'
 alias umsshfs='fusermount3 -u'
 
-alias ll='lsd -al'
-alias la='lsd -A'
-alias l='lsd -aF'
+alias ll='ls -al'
+alias la='ls -A'
+alias l='ls -aF'
 
 unset -f dotfiles
 dotfiles() {  # args...
 	/usr/bin/git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" "$@"
-}
-
-# Shorthand clone from AUR
-unset -f aur
-aur () {  # name
-	git clone "https://aur.archlinux.org/${1}.git"
 }
 
 unset -f wat
