@@ -42,6 +42,7 @@
       "atom-browser"
     ]
     projectHome: "/home/outfrost/Code/etc"
+    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"

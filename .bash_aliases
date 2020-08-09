@@ -65,3 +65,8 @@ lk() {
 	  echo '.*+^ moe moe kyun~ ^+*.' ) | toilet -t -f ascii12 | lolcat
 	xtrlock
 }
+
+unset -f gti
+gti() {
+	echo "bruh" >&2
+}
