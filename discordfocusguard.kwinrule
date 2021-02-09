@@ -1,9 +1,0 @@
-[Application settings for discord]
-Description=Application settings for discord
-clientmachine=anachronos
-clientmachinematch=0
-fsplevel=2
-fsplevelrule=2
-wmclass=discord
-wmclasscomplete=false
-wmclassmatch=1

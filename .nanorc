@@ -1,4 +1,4 @@
-set suspend
+set suspendable
 set autoindent
 set linenumbers
 set constantshow
@@ -7,20 +7,23 @@ set noconvert
 set positionlog
 set historylog
 set smarthome
-set smooth
-set nowrap
 set softwrap
 set atblanks
 set tabsize 4
-set morespace
 set nohelp
+set trimblanks
+set fill 72
+set guidestripe 101
+set zap
 set keycolor ,black
-set statuscolor brightblack
+set statuscolor lightblack
 set titlecolor ,black
 set numbercolor blue
+set stripecolor ,black
 
 include "/usr/share/nano/*.nanorc"
 include "~/.nano/*.nanorc"
+extendsyntax c header "#(define|undef|include|if(n?def)?|else|elif|endif|line|error|pragma)|^\s*inline\s"
 
 bind ^Z undo all
 bind ^Y redo all

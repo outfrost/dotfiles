@@ -1,27 +1,23 @@
-alias devmux="tmux new-session\; split-window -v -l 10\; select-pane -U\; split-window -h -b -l 20 \"watch -tc 'ls -A --group-directories-first --color=always | grep -v \\\"\\.swp\\\"'\"\; select-pane -R\; split-window -h"
-alias wmux="tmux new-session\; split-window -v -l 16\; select-pane -U\; split-window -h"
-alias qk='konsole --profile "Outfrost quad" <&- >&- 2>&- & disown'
 alias lsb='lsblk -o NAME,RM,SIZE,MOUNTPOINT,FSTYPE,LABEL'
 alias umsshfs='fusermount3 -u'
 
-alias ll='lsd -al'
-alias la='lsd -A'
-alias l='lsd -aF'
+alias ll='ls -al'
+alias la='ls -A'
+alias l='ls -aF'
 
 unset -f dotfiles
 dotfiles() {  # args...
 	/usr/bin/git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" "$@"
 }
 
-# Shorthand clone from AUR
-unset -f aur
-aur () {  # name
-	git clone "https://aur.archlinux.org/${1}.git"
-}
-
 unset -f wat
 wat() {  # regex... path
-	grep --color=always -nRE "$@" | less -R
+	grep --color=always --exclude-dir='.git' -IinRE "$@" | less -FRX
+}
+
+unset -f watr
+watr() {  # regex... path
+	grep --color=always --exclude-dir='.git' --exclude-from=.ignore -IinRE "$@" | less -FRX
 }
 
 unset -f mkcd
@@ -32,7 +28,7 @@ mkcd() {  # path...
 
 unset -f cdb
 cdb() {
-	cd "$OLDPWD"
+	cd -
 }
 
 unset -f fzn
@@ -52,21 +48,66 @@ fzx() {
 	echo -n "$filename" | xclip
 }
 
+unset -f tag
+tag() {  # regex
+	grep -iE '^\S*'"${1}" tags.xref \
+		| while read IDENT TYPE LINE FILE TEXT; do
+			echo -e "${FILE}:${LINE}"
+			echo -e "\t\t${TEXT}" | bat -l c++ -pp
+		done
+}
+
 unset -f run
 run() {  # command args...
 	nohup "$@" >/dev/null 2>&1 &
 }
 
-unset -f lk
-lk() {
-	clear
-	( echo ' '
-	  echo ' '
-	  echo '.*+^ moe moe kyun~ ^+*.' ) | toilet -t -f ascii12 | lolcat
-	xtrlock
-}
-
 unset -f gti
 gti() {
 	echo "bruh" >&2
+}
+
+unset -f huh
+huh() {  # args...
+	git diff "$@"
+}
+
+unset -f huhs
+huhs() {  # args...
+	git diff --staged "$@"
+}
+
+unset -f k
+k() {  # args...
+	git status "$@"
+}
+
+# ###
+# wsl nonsense
+# ###
+unset -f git
+git() {
+	case "$PWD" in
+		/mnt/*)
+			/mnt/c/Program\ Files/Git/bin/git.exe "$@"
+			;;
+		*)
+			/usr/bin/git "$@"
+			;;
+	esac
+}
+
+unset -f cmd.exe
+cmd.exe() {
+	/mnt/c/Windows/SysWOW64/cmd.exe "$@"
+}
+
+unset -f py.exe
+py.exe() {
+	/mnt/c/Windows/py.exe "$@"
+}
+
+unset -f mssql-cli
+mssql-cli() {  # args...
+	/mnt/c/Program\ Files/Python39/python.exe -m mssqlcli.main "$@"
 }
