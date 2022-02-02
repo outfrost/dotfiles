@@ -10,11 +10,15 @@
 	date = !echo No.
 	le-diff = !git diff --color | cat -E | less -R
 	summarize-merge = !git diff HEAD...${1} -- $(git diff --name-only ${1}...HEAD)
+	sendit = push -u origin HEAD
 [credential "https://"]
 	helper = cache --timeout=1800
 [core]
 	autocrlf = input
+	quotePath = no
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[fetch]
+	prune = true

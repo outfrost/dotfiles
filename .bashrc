@@ -139,6 +139,9 @@ ex ()
   fi
 }
 
+# makepkg default package format
+PKGEXT='.pkg.tar'
+
 # Alias definitions
 [ -r ~/.bash_aliases ] && . ~/.bash_aliases
 

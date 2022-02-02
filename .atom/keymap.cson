@@ -31,17 +31,23 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
+'atom-workspace':
+	'alt-shift-T': 'atom-terminal:open-project-root'
+
 'atom-workspace, atom-workspace atom-text-editor':
 	'ctrl-shift-e': 'markdown-themeable-pdf:export'
 	'ctrl-shift-d': 'latex:build'
 	'alt-s': 'latex:sync'
-	'ctrl-shift-m': 'graphviz-preview-plus:toggle'
 
-'atom-workspace atom-text-editor':
+'atom-text-editor':
 	'ctrl-up': 'editor:move-to-beginning-of-previous-paragraph'
 	'ctrl-down': 'editor:move-to-beginning-of-next-paragraph'
 	'ctrl-shift-up': 'editor:select-to-beginning-of-previous-paragraph'
 	'ctrl-shift-down': 'editor:select-to-beginning-of-next-paragraph'
+	'ctrl-shift-m': 'markdown-preview:toggle'
+
+'atom-workspace atom-text-editor:not(.mini)[data-grammar=\'source dot\']':
+	'ctrl-shift-m': 'graphviz-preview-plus:toggle'
 
 'atom-workspace atom-text-editor:not([mini])':
 	'alt-up': 'ctrl-dir-scroll:scroll-up'

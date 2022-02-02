@@ -5,6 +5,13 @@
   "atom-html-preview":
     enableMathJax: true
     scrollToCursor: true
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+    "atom-ide-diagnostics-ui":
+      showDiagnosticTraces: true
+    "atom-ide-terminal":
+      documentationMessage: false
   "atom-latex":
     combine_typesetting_log: false
     preview_after_build: "Do nothing"
@@ -19,6 +26,15 @@
       "*.md"
       "*.txt"
     ]
+  build:
+    saveOnBuild: true
+  "build-cargo":
+    extCommands:
+      cargoClippy: true
+    jsonErrorFormat: false
+  "cargo-test-runner":
+    cargoBinaryPath: "/usr/bin/cargo"
+    options: "-- --test-threads 1"
   "clang-format":
     fallbackStyle: "none"
   core:
@@ -27,7 +43,8 @@
     disabledPackages: [
       "spell-check"
       "branch-status"
-      "graphviz-preview"
+      "atom-ide-terminal"
+      "x-terminal"
     ]
     fileSystemWatcher: "experimental"
     openEmptyEditorOnStart: false
@@ -40,22 +57,26 @@
       "graphviz-preview-plus"
       "ctrl-dir-scroll"
       "atom-browser"
+      "cargo-test-runner"
     ]
     projectHome: "/home/outfrost/Code/etc"
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "neon-syntax"
+      "synthwave-sharp-syntax"
     ]
   "ctrl-dir-scroll":
     bigScrollSize: 5
   editor:
     autoIndentOnPaste: false
+    fontSize: 18
+    preferredLineLength: 100
     scrollPastEnd: true
     showInvisibles: true
     softTabs: false
     tabLength: 4
+    tabType: "hard"
   "exception-reporting":
     userId: "d26f4246-c63b-4155-9e28-df25982b7fdf"
   "git-plus":
@@ -68,6 +89,10 @@
   "hey-pane":
     expandedWidth: 74
     focusDelay: 100
+  "iv-terminal":
+    customTexts:
+      customText1: "cargo test -- --test-threads 1"
+    terminalDirectory: "project-folder"
   "language-markdown":
     autoIncrementListItems: false
     removeEmptyListItems: false
@@ -103,6 +128,9 @@
     openResultAfterBuild: false
     openResultInBackground: false
     opener: "pdf-view"
+  "linter-ui-default":
+    panelHeight: 237
+  "markdown-preview": {}
   "markdown-preview-plus":
     markdownItConfig:
       useLazyHeaders: false
@@ -125,12 +153,42 @@
   "split-diff":
     colors:
       addedColorSide: "right"
+  "terminal-tab":
+    defaultLocation: "center"
+  terminus:
+    core:
+      mapTerminalsTo: "Folder"
+    customTexts:
+      customText1: "cargo test -- --test-threads 1"
+    style:
+      animationSpeed: 4
+      defaultPanelHeight: "40%"
+    toggles:
+      autoClose: false
+      cursorBlink: false
+  "vk-terminal":
+    core:
+      autoRunCommand: "/usr/bin/bash"
+    customTexts:
+      customText1: "cargo test -- --test-threads 1"
+    toggles:
+      cursorBlink: false
+      selectToCopy: false
   welcome:
     showOnStartup: false
   whitespace: {}
+  "x-terminal":
+    spawnPtySettings:
+      projectCwd: true
+    terminalSettings:
+      allowHiddenToStayActive: true
+      colors:
+        theme: "Standard"
+      defaultOpenPosition: "Split Down"
 ".basic.html.text":
   editor:
     softWrap: true
+    tabLength: 2
 ".diff.source":
   editor:
     autoIndent: false

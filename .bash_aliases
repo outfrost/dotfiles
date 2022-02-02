@@ -4,9 +4,10 @@ alias qk='konsole --profile "Outfrost quad" <&- >&- 2>&- & disown'
 alias lsb='lsblk -o NAME,RM,SIZE,MOUNTPOINT,FSTYPE,LABEL'
 alias umsshfs='fusermount3 -u'
 
-alias ll='lsd -al'
-alias la='lsd -A'
-alias l='lsd -aF'
+# Until Konsole gets its shit together, no icons
+alias ll='lsd -al --icon never'
+alias la='lsd -A --icon never'
+alias l='lsd -aF --icon never'
 
 unset -f dotfiles
 dotfiles() {  # args...
@@ -32,7 +33,7 @@ mkcd() {  # path...
 
 unset -f cdb
 cdb() {
-	cd "$OLDPWD"
+	cd -
 }
 
 unset -f fzn
@@ -69,4 +70,23 @@ lk() {
 unset -f gti
 gti() {
 	echo "bruh" >&2
+}
+
+unset -f k
+k() {  # args...
+	git status "$@"
+}
+
+unset -f huh
+huh() {  # args...
+	git diff "$@"
+}
+
+unset -f v
+v() {  # [ path ]
+	if [ -z "$1" ]; then
+		run xdg-open .
+	else
+		run xdg-open "$1"
+	fi
 }
