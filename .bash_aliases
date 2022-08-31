@@ -57,6 +57,23 @@ tag() {  # regex
 		done
 }
 
+unset -f goto
+goto() {  # regex
+	GOTO_CMDLINE="$(
+		grep -iE '^\S*'"${1}" tags.xref \
+			| while read IDENT TYPE LINE FILE TEXT; do
+				echo "nano +${LINE} ${FILE}"
+				break
+			done
+	)"
+	echo "$GOTO_CMDLINE"
+	if [ -n "$GOTO_CMDLINE" ]; then
+		$GOTO_CMDLINE
+	else
+		echo "no matching tags found" >&2
+	fi
+}
+
 unset -f run
 run() {  # command args...
 	nohup "$@" >/dev/null 2>&1 &
@@ -80,6 +97,11 @@ huhs() {  # args...
 unset -f k
 k() {  # args...
 	git status "$@"
+}
+
+unset -f red
+red() {  # cmd...
+	(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31;1m&\e[m,'>&2)3>&1
 }
 
 # ###

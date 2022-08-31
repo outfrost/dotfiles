@@ -11,6 +11,7 @@ set softwrap
 set atblanks
 set tabsize 4
 set nohelp
+unset mouse
 set trimblanks
 set fill 72
 set guidestripe 101
