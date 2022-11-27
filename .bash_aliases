@@ -90,3 +90,13 @@ v() {  # [ path ]
 		run xdg-open "$1"
 	fi
 }
+
+unset -f d
+d() {
+	echo 'deez nuts' | figlet -f big -w 128 | lolcat
+}
+
+unset -f dn
+dn() {
+	echo -e '\e[31;1;3mD\e[0m\e[33;1;3mE\e[0m\e[32;1;3mE\e[0m\e[32;3mZ\e[0m \e[36;1;3mN\e[0m\e[36;3mU\e[0m\e[34;1;3mT\e[0m\e[35;1;3mS\e[0m' >&2
+}
