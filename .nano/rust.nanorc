@@ -4,36 +4,43 @@
 
 ## NOTE: Rules are applied in order: later rules re-colorize matching text.
 
+# Valid names for the foreground and background colors are: red, green, blue, magenta, yellow, cyan, white, and black.
+# 256 colors, other valid (but unprefixable) color names are: pink, purple, mauve, lagoon, mint, lime, peach, orange, latte, rosy, beet, plum, sea, sky, slate, teal, sage, brown, ocher, sand, tawny, brick, crimson, and normal
+
 syntax rust "\.(rlib|rs)$"
 comment "//"
 
+# Attributes
+color slate "#\[[A-Za-z0-9 _()!:+=/,\'\"-]+\]"
+
 # Function definitions
-color magenta "fn [a-z_0-9]+"
+color brightmagenta "fn [a-z_0-9]+"
 
 # Reserved words
 color yellow "\<(abstract|as|async|await|become|box|break|const|continue|crate|do|dyn|else|enum|extern|false|final|fn|for|if|impl|in|let|loop|macro|match|mod|move|mut|override|priv|pub|ref|return|self|static|struct|super|trait|true|try|type|typeof|unsafe|unsized|use|virtual|where|while|yield)\>"
 
+# Operators
+color brightcyan "[!&*?]"
+
 # Macros
-color red "[a-z_]+!"
+color brightyellow "[a-z_]+!"
 
 # Constants
-color magenta "[A-Z][A-Z_0-9]+"
+color rosy "[A-Z][A-Z_0-9]+"
 
 # Traits/Enums/Structs/Types/...
-color magenta "[A-Z][A-Za-z0-9]+"
+color pink "[A-Z]+([a-z][A-Z0-9]*)+"
+color pink "\<(bool|char|[fiu](8|16|32|64|128)|[iu]size|str)\>"
 
 # Strings
-color green "\"[^\"]*\""
-color green start="\".*\\$" end=".*\""
+color sage "\"[^\"]*\""
+color sage start="\".*\\$" end=".*\""
 ## NOTE: This isn't accurate, but matching "#{0,} for the end of the string is too liberal.
-color green start="r#+\"" end="\"#+"
+color sage start="r#+\"" end="\"#+"
 
 # Comments
-color blue "//.*"
-color blue start="/\*" end="\*/"
-
-# Attributes
-color magenta start="#!\[" end="\]"
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
 
 # Some common markers
 color brightcyan "(XXX|TODO|FIXME|\?\?\?)"
