@@ -11,9 +11,10 @@ set atblanks
 set tabsize 4
 set nohelp
 set stateflags
-set fill 72
+unset mouse
 set trimblanks
-set guidestripe 100
+set fill 72
+set guidestripe 101
 set zap
 set keycolor ,black
 set statuscolor lightblack
@@ -23,6 +24,7 @@ set stripecolor ,black
 
 include "/usr/share/nano/*.nanorc"
 include "~/.nano/*.nanorc"
+extendsyntax c header "#(define|undef|include|if(n?def)?|else|elif|endif|line|error|pragma)|^\s*inline\s"
 
 bind ^Z undo all
 bind ^Y redo all

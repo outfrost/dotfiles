@@ -21,9 +21,11 @@ color brightred "^[[:space:]]*\#{1,6} .*$"
 # Quotes
 color blue "^[[:space:]]*> .*$"
 # Italic text
-color magenta "\W\*[^[:space:]][^`]*[^[:space:]\]\*\W" "\W_[^[:space:]][^`]*[^[:space:]\]_\W"
+color magenta start="(^|[^\w\\*])\*\<" end="\>\*($|[^\w*])"
+color magenta start="\<_" end="_\>"
 # Bold text
-color brightyellow "[^\]\*\*[^[:space:]].*[^[:space:]\]\*\*" "[^\]__[^[:space:]].*[^[:space:]\]__"
+color brightyellow start="(^|[^\w\\])\*\*(\<|[[:punct:]])" end="(\>|[[:punct:]])\*\*($|\W)"
+color brightyellow start="\<__" end="__\>"
 # Hyperlinks
 color cyan "\[[^\[]*\]\([^\(]*\)"
 color cyan "https?:\/\/[^[:space:]]*"

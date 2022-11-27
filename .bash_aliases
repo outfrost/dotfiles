@@ -1,6 +1,3 @@
-alias devmux="tmux new-session\; split-window -v -l 10\; select-pane -U\; split-window -h -b -l 20 \"watch -tc 'ls -A --group-directories-first --color=always | grep -v \\\"\\.swp\\\"'\"\; select-pane -R\; split-window -h"
-alias wmux="tmux new-session\; split-window -v -l 16\; select-pane -U\; split-window -h"
-alias qk='konsole --profile "Outfrost quad" <&- >&- 2>&- & disown'
 alias lsb='lsblk -o NAME,RM,SIZE,MOUNTPOINT,FSTYPE,LABEL'
 alias umsshfs='fusermount3 -u'
 
@@ -22,7 +19,12 @@ aur () {  # name
 
 unset -f wat
 wat() {  # regex... path
-	grep --color=always -nRE "$@" | less -R
+	grep --color=always --exclude-dir='.git' -IinRE "$@" | less -FRX
+}
+
+unset -f watr
+watr() {  # regex... path
+	grep --color=always --exclude-dir='.git' --exclude-from=.ignore -IinRE "$@" | less -FRX
 }
 
 unset -f mkcd
@@ -53,6 +55,32 @@ fzx() {
 	echo -n "$filename" | xclip
 }
 
+unset -f tag
+tag() {  # regex
+	grep -iE '^\S*'"${1}" tags.xref \
+		| while read IDENT TYPE LINE FILE TEXT; do
+			echo -e "${FILE}:${LINE}"
+			echo -e "\t\t${TEXT}" | bat -l c++ -pp
+		done
+}
+
+unset -f goto
+goto() {  # regex
+	GOTO_CMDLINE="$(
+		grep -iE '^\S*'"${1}" tags.xref \
+			| while read IDENT TYPE LINE FILE TEXT; do
+				echo "nano +${LINE} ${FILE}"
+				break
+			done
+	)"
+	echo "$GOTO_CMDLINE"
+	if [ -n "$GOTO_CMDLINE" ]; then
+		$GOTO_CMDLINE
+	else
+		echo "no matching tags found" >&2
+	fi
+}
+
 unset -f run
 run() {  # command args...
 	nohup "$@" >/dev/null 2>&1 &
@@ -72,14 +100,24 @@ gti() {
 	echo "bruh" >&2
 }
 
+unset -f huh
+huh() {  # args...
+	git diff "$@"
+}
+
+unset -f huhs
+huhs() {  # args...
+	git diff --staged "$@"
+}
+
 unset -f k
 k() {  # args...
 	git status "$@"
 }
 
-unset -f huh
-huh() {  # args...
-	git diff "$@"
+unset -f red
+red() {  # cmd...
+	(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31;1m&\e[m,'>&2)3>&1
 }
 
 unset -f v

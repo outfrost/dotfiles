@@ -150,3 +150,6 @@ PKGEXT='.pkg.tar'
 
 # thefuck
 eval $(thefuck --alias)
+
+# fzf
+#export FZF_DEFAULT_COMMAND="cat .files"
