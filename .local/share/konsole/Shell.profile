@@ -1,9 +1,9 @@
 [Appearance]
 AntiAliasFonts=true
-BoldIntense=true
+BoldIntense=false
 ColorScheme=Ionised
 DimmValue=130
-Font=Noto Mono,10,-1,5,50,0,0,0,0,0
+Font=Fira Mono,11,-1,5,50,0,0,0,0,0
 UseFontLineChararacters=false
 
 [Cursor Options]
