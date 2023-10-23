@@ -138,3 +138,12 @@ unset -f dn
 dn() {
 	echo -e '\e[31;1;3mD\e[0m\e[33;1;3mE\e[0m\e[32;1;3mE\e[0m\e[32;3mZ\e[0m \e[36;1;3mN\e[0m\e[36;3mU\e[0m\e[34;1;3mT\e[0m\e[35;1;3mS\e[0m' >&2
 }
+
+unset -f shrink_and_archive
+shrink_and_archive() {
+	for f in "$@"; do
+		ffmpeg -i "$f" -threads 16 -c:v h264 -preset slower -crf 25 -c:a copy "${f/%.mkv/ small.mp4}" \
+			&& rm "$f" \
+			|| ( (>&2 echo -e '\e[31;1mfuck:' "$f" '\e[0m'); rm "${f/%.mkv/ small.mp4}" )
+	done
+}

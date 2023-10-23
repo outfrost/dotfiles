@@ -148,6 +148,9 @@ PKGEXT='.pkg.tar'
 # broot
 [ -r "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
+# cargo
+export PATH=$HOME/.cargo/bin:$PATH
+
 # thefuck
 eval $(thefuck --alias)
 

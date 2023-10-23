@@ -176,6 +176,7 @@
       selectToCopy: false
   welcome:
     showOnStartup: false
+    showSunsettingOnStartup: false
   whitespace: {}
   "x-terminal":
     spawnPtySettings:
