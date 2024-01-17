@@ -1,5 +1,5 @@
 xrandr \
-	--output HDMI-A-1 \
+	--output HDMI-A-0 \
 		--mode 1920x1080 \
 		--pos 0x700 \
 		--refresh 60.00 \
@@ -12,7 +12,7 @@ xrandr \
 		--refresh 143.86 \
 		--reflect normal \
 		--rotate normal \
-	--output HDMI-A-0 \
+	--output HDMI-A-1 \
 		--mode 1920x1200 \
 		--pos 4480x0 \
 		--refresh 59.95 \
