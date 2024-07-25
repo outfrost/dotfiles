@@ -18,8 +18,8 @@ TerminalColumns=128
 TerminalRows=40
 
 [Scrolling]
-HistoryMode=2
-HistorySize=8000
+HistoryMode=1
+HistorySize=16384
 ScrollBarPosition=2
 
 [Terminal Features]

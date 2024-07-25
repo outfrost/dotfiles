@@ -23,3 +23,12 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[merge]
+	tool = nano
+[mergetool]
+	keepBackup = false
+[mergetool.nano]
+	cmd = nano ${MERGED}
+[safe]
+	directory = /storage/dragonfly/Users/Outfrost/git/
+	directory = /storage/dragonfly/Users/Outfrost/Code/
