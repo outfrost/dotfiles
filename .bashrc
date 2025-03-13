@@ -156,3 +156,6 @@ eval $(thefuck --alias)
 
 # fzf
 #export FZF_DEFAULT_COMMAND="cat .files"
+
+# haskell
+[ -f "${HOME}/.ghcup/env" ] && . "${HOME}/.ghcup/env"

@@ -110,6 +110,11 @@ huhs() {  # args...
 	git diff --staged "$@"
 }
 
+unset -f huhw
+huhw() {  # args...
+	git diff --word-diff=plain --word-diff-regex='\b\w+\b|\W' "$@"
+}
+
 unset -f k
 k() {  # args...
 	git status "$@"
