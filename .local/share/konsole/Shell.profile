@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 BoldIntense=false
-ColorScheme=Ionised
+ColorScheme=Ionised (test)
 DimmValue=130
 Font=Fira Mono,11,-1,5,50,0,0,0,0,0
 UseFontLineChararacters=false

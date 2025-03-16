@@ -11,9 +11,9 @@
 	qga = log --all --color --graph --abbrev-commit --full-history --date-order --pretty=format:\"%C(bold blue)%h%Creset%C(auto)%d%Creset %s %C(bold black)(%cr)%Creset\"
 	date = !echo No.
 	le-diff = !git diff --color | cat -E | less -R
-	summarize-merge = !git diff HEAD...${1} -- $(git diff --name-only ${1}...HEAD)
+	summarize-merge = !git diff HEAD...${1} -- $(git diff --name-only ${1}...HEAD) "#"
 	unstage = reset --
-	upd = !git fetch origin ${1}:${1}
+	upd = "!git fetch origin ${1}:${1} #"
 	sendit = push -u origin HEAD
 [credential "https://"]
 	helper = cache --timeout=1800
