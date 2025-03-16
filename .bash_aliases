@@ -97,7 +97,7 @@ lk() {
 
 unset -f gti
 gti() {
-	echo "bruh" >&2
+	which cowsay >/dev/null 2>&1 && (echo "bruh" | cowsay -n -f sus) || echo "bruh" >&2
 }
 
 unset -f huh
